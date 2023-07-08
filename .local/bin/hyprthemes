@@ -1,0 +1,155 @@
+#!/bin/sh
+
+
+
+#time=`date +%Y-%m-%d-%H-%M-%S`
+#dir="`xdg-user-dir PICTURES`/Screenshots"
+#file="Screenshot_${time}.png"
+notify_cmd_shot="dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/picture.png"
+
+everforest="Everforest"
+nord="Nord"
+nord_red="Nord Red"
+dracula="Dracula"
+catppuccin_mocha="Catppuccin Mocha"
+catppuccin_macchiato="Catppuccin Macchiato"
+catppuccin_frappe="Catppuccin Frappe"
+catppuccin_frappe_pink="Catppuccin Frappe Pink"
+gruvbox="Gruvbox"
+
+options="$everforest\n$nord\n$dracula\n$nord_red\n$catppuccin_mocha\n$catppuccin_macchiato\n$catppuccin_frappe\n$catppuccin_frappe_pink\n$gruvbox"
+
+chosen="$(echo -e "$options" | rofi -theme ~/.config/rofi/themes.rasi -p 'Choose Theme' -dmenu -selected-row 0)"
+echo "$chosen"
+case $chosen in
+
+
+	$everforest)
+    cp ~/.config/kitty/themes/everforest.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/everforest.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/everforest.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/everforest.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/everforest.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/everforest/fog_forest_2.png
+		cp ~/Pictures/everforest/fog_forest_2.png ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Everforest-Dark-Border
+		gsettings set org.gnome.desktop.interface icon-theme Tela-manjaro-dark
+		pkill swaync
+		swaync & disown
+	;;
+
+	$dracula)
+    cp ~/.config/kitty/themes/dracula.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/dracula.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/dracula.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/dracula.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/dracula.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/dracula/2.jpeg
+		cp ~/Pictures/dracula/2.jpeg ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Dracula
+		gsettings set org.gnome.desktop.interface icon-theme Dracula
+		pkill swaync
+		swaync & disown
+	;;
+
+	$nord)
+    cp ~/.config/kitty/themes/nord.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/nord.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/nord.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/nord.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/nord.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/nord/2.jpg
+		cp ~/Pictures/nord/2.jpg ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Nordic-darker
+		gsettings set org.gnome.desktop.interface icon-theme Nordic-bluish
+		pkill swaync
+		swaync & disown
+	;;
+	$nord_red)
+    cp ~/.config/kitty/themes/nord-red.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/nord-red.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/nord-red.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/nord-red.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/nord-red.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/nord-red/1.jpeg
+		cp ~/Pictures/nord-red/1.jpeg ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Nordic-red-darker
+		gsettings set org.gnome.desktop.interface icon-theme Nordzy-red
+		pkill swaync
+		swaync & disown
+  ;;
+	$catppuccin_mocha)
+    cp ~/.config/kitty/themes/catppuccin-mocha.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/catppuccin-mocha.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/catppuccin-mocha.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/catppuccin-mocha.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/catppuccin-mocha.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/Catppuccin/4.png
+		cp ~/Pictures/Catppuccin/4.png ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Mocha-Standard-Mauve-dark
+		gsettings set org.gnome.desktop.interface icon-theme Tela-purple-dark
+		pkill swaync
+		swaync & disown
+	;;
+	$catppuccin_macchiato)
+    cp ~/.config/kitty/themes/catppuccin-macchiato.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/catppuccin-macchiato.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/catppuccin-macchiato.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/catppuccin-macchiato.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/catppuccin-macchiato.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/Catppuccin/5.png
+		cp ~/Pictures/Catppuccin/5.png ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Macchiato-Standard-Mauve-dark
+		gsettings set org.gnome.desktop.interface icon-theme Tela-purple-dark
+		pkill swaync
+		swaync & disown
+	;;
+	$catppuccin_frappe)
+    cp ~/.config/kitty/themes/catppuccin-frappe.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/catppuccin-frappe.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/catppuccin-frappe.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/catppuccin-frappe.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/catppuccin-frappe.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/Catppuccin/3.png
+		cp ~/Pictures/Catppuccin/3.png ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Frappe-Standard-Mauve-dark
+		gsettings set org.gnome.desktop.interface icon-theme Tela-purple-dark
+		pkill swaync
+		swaync & disown
+	;;
+	$catppuccin_frappe_pink)
+    cp ~/.config/kitty/themes/catppuccin-frappe.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/catppuccin-frappe-pink.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/catppuccin-frappe-pink.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/catppuccin-frappe-pink.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/catppuccin-frappe-pink.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/Catppuccin/10.jpeg
+		cp ~/Pictures/Catppuccin/10.jpeg ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Frappe-Standard-Pink-dark
+		gsettings set org.gnome.desktop.interface icon-theme Tela-pink-dark
+		pkill swaync
+		swaync & disown
+	;;
+	$gruvbox)
+    cp ~/.config/kitty/themes/gruvbox.conf ~/.config/kitty/colors.conf
+    cp ~/.config/rofi/themes/gruvbox.rasi ~/.config/rofi/colors.rasi
+    cp ~/.config/eww/themes/gruvbox.scss ~/.config/eww/colors.scss
+		cp ~/.config/hypr/gtk-3.0-themes/gruvbox.ini ~/.config/gtk-3.0/settings.ini
+		cp ~/.config/swaync/themes/gruvbox.css ~/.config/swaync/colors.css
+    swww img ~/Pictures/gruvbox/forest-hut.jpg
+		cp ~/Pictures/gruvbox/forest-hut.jpg ~/Pictures/current.jpg
+		convert ~/Pictures/current.jpg -blur 0x4 ~/Pictures/blur.jpg
+		gsettings set org.gnome.desktop.interface gtk-theme Gruvbox-Material-Dark
+		gsettings set org.gnome.desktop.interface icon-theme Gruvbox-Material-Dark
+		pkill swaync
+		swaync & disown
+	;;
+esac
